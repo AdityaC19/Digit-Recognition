@@ -1,0 +1,173 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<style type="text/css">
+	.buttons_under_canvas1 {
+		margin-left: 30px;
+		margin-top: 10px;
+	}
+
+	.canvas2 {
+		margin-left: 200px;
+		
+	}
+
+</style>
+<body onload="init();">
+    <br><br><br>
+ 	<div class="jumbotron text-center">
+ 		<h3>Welcome to Digit Recognizer</h3>
+ 		<br>This page lets you draw any digit (0-9) and predicts what you might have entered. Draw a digit in the left box and click on <b>"PREDICT"</b>.
+ 	</div>
+ 	        <div class="container">
+	 		<div class="row">
+	 			<div class="col-md-3">
+	 				<canvas  id="myCanvas" width="250" height="250" style="border:10px solid grey;">
+
+			Your browser does not support the HTML5 canvas tag.
+			</canvas>
+		
+	 			</div>
+             
+             	<div class="col-md-3 canvas2">
+	 				<canvas  id="myCanvas2" width="500" height="250" style="border:3px solid black;">
+
+			      Your browser does not support the HTML5 canvas tag.
+			</canvas>
+		
+	 			</div>
+
+	 		</div>
+	 		<div class="row buttons_under_canvas1">
+	 			
+	 			<div class="col-md-1 ">
+	 				<form action="/">
+			      	<input type="submit" class="btn btn-info" value = "CLEAR">
+                   </form>
+
+				
+	 			</div>	
+	 			<div class="col-md-1">
+					<form action="{{ url_for('http://127.0.0.1:5000/predict') }}" method="post"></form>
+			      		<input type="submit" class="btn btn-success" value = "PREDICT">
+                    </form>
+	 							<!--<button type="button"   class="btn btn-success">PREDICT</button>-->
+
+	 			</div>
+	 		</div>
+	 		
+			      
+			</div>
+
+<script>
+var lastX,lastY;
+lastX=-1;
+lastY=-1;
+size=20;
+var mouseStatus=0;
+var currentX,currentY;
+var imgArray;
+
+function getCurrent(e)
+{
+	const rect = canvas.getBoundingClientRect()
+	currentX = e.clientX-rect.left-10;
+    currentY = e.clientY-rect.top-10;
+
+}
+
+function drawLine( x, y, size) {
+
+            // If lastX is not set, set lastX and lastY to the current position 
+            if (lastX == -1 || lastY==-1) {
+                lastX = x;
+                lastY = y;
+            }
+            ctx.strokeStyle="black";
+            ctx.lineCap = "round";
+            ctx.lineJoin="round";
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.lineWidth = size;
+            ctx.stroke();
+
+
+            lastX = x;
+            lastY = y;
+        }
+
+ function mousePressed(e)
+ {
+ 	mouseStatus=1;
+ 	getCurrent(e);
+ 	drawLine(currentX,currentY,size);
+ }
+
+ function mouseReleased(e)
+ {
+ 	mouseStatus=0;
+ 	lastX=-1;
+ 	lastY=-1;
+
+
+ }
+
+
+  
+function saveImage()
+ {
+ 	var canvas = document.getElementById("myCanvas");
+// draw to canvas...
+canvas.toBlob(function(blob) {
+    saveAs(blob, "pokemon.png");
+});
+console.log("IMAGE SAVED!");
+ }
+
+   function mouseMove(e) {
+           
+            getCurrent(e);
+            if (mouseStatus == 1) {
+                drawLine( currentX, currentY, size);
+            }
+    }
+
+   function clearCanvas()
+   {
+	ctx.clearRect(0,0,250,250);
+
+
+   }
+
+async function init()
+{
+	console.log("INIT FUNCTON HAS BEEN INVOKED!");
+if (ctx) {
+                // React to mouse events on the canvas, and mouseup on the entire document
+                canvas.addEventListener('mousedown', mousePressed, false);
+                canvas.addEventListener('mousemove', mouseMove, false);
+                window.addEventListener('mouseup', mouseReleased, false);
+
+          }
+
+}
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "white";
+ctx.fillRect(0,0,250,250);
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+
+
+{% endblock %}

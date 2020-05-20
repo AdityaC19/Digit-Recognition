@@ -1,0 +1,367 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<head>
+<style>
+
+
+
+body {
+  paddding:0px;
+  margin-top:100px;
+  background-color: rgb(251, 255, 253);
+
+}
+
+
+.person1 {
+	margin: 0 auto;
+	width: 300px;
+	padding-bottom: 10px;
+	background: #fbfffd;
+	transition: all 0.6s ease;
+	-webkit-perspective: 500px;
+	perspective: 500px;
+	transform-origin: center;
+  border:2px solid #00a5a6;
+}
+
+.dp_container1 {
+  width:100%;
+  position:relative;
+}
+.box1 {
+  width:298px;
+  height:120px;
+  background:#00a5a6;
+  background-image:url('https://static.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac');
+  background-size:cover;
+  background-position:top right;
+}
+.dp_container1 figure {
+  width:120px;
+  margin:0 auto;
+  margin-bottom:50px;
+  animation:loadEffect .4s ease;
+}
+.dp1 {
+  width:120px;
+  margin-top:-70px;
+  border-radius:50%;
+  border : 2px solid white;
+  position:absolute;
+}
+.about1 {
+	width: 200px;
+	margin: 10px auto;
+	padding: 10px 0;
+	font-family: "Calibri";
+	color:#000000;
+	text-alig: left;
+	font-size: 17px;
+}
+.about1 p b {
+  font-size:16px;
+  font-family: monospace;
+  color:#fff;
+  display:block;
+  text-align:center;
+  margin-top:10px;
+  position:relative;
+}
+
+.about1 p {
+  text-align:center;
+}
+.about1 p span {
+  display:block;
+  margin:5px auto;
+}
+
+.container1 {
+  width:300px;
+  margin-left:0px;
+
+}
+
+.container2 {
+  width:300px;
+  margin-left:30px;
+
+}
+
+.person {
+	margin: 0 auto;
+	width: 300px;
+	padding-bottom: 10px;
+	background: #fbfffd;
+	transition: all 0.6s ease;
+	-webkit-perspective: 500px;
+	perspective: 500px;
+	transform-origin: center;
+  border:2px solid #00a5a6;
+}
+
+.dp_container {
+  width:100%;
+  position:relative;
+}
+.box {
+  width:298px;
+  height:120px;
+  background:#00a5a6;
+  background-image:url('https://static.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac');
+  background-size:cover;
+  background-position:top right;
+}
+.dp_container figure {
+  width:120px;
+  margin:0 auto;
+  margin-bottom:50px;
+  animation:loadEffect .4s ease;
+}
+.dp {
+  width:120px;
+  margin-top:-70px;
+  border-radius:50%;
+  border : 2px solid white;
+  position:absolute;
+}
+.about {
+	width: 200px;
+	margin: 10px auto;
+	padding: 10px 0;
+	font-family: "Calibri";
+	color #000000;
+	text-alig: left;
+	font-size: 17px;
+}
+.about p b {
+  font-size:16px;
+  font-family: monospace;
+  color:#fff;
+  display:block;
+  text-align:center;
+  margin-top:10px;
+  position:relative;
+}
+
+.about p {
+  text-align:center;
+}
+.about p span {
+  display:block;
+  margin:5px auto;
+}
+
+
+
+
+.container3 {
+  width:550px;
+  margin-left:70px;
+  margin-top: 5px;
+
+}
+.box3 {
+  width:450px;
+  height:120px;
+  background:#00a5a6;
+  background-image:url('https://static.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac');
+  background-size:cover;
+  background-position:top right;
+  	filter: grayscale(100%);
+}
+.person3 {
+	margin: 0 auto;
+	width: 452px;
+	padding-bottom: 10px;
+	background: #fbfffd;
+	transition: all 0.6s ease;
+	-webkit-perspective: 500px;
+	perspective: 500px;
+	transform-origin: center;
+  border:2px solid gray;
+}
+
+.dp_container3 {
+  width:100%;
+  position:relative;
+  background-color: gray;
+}
+
+.dp_container3 figure {
+  width:120px;
+  margin:0 auto;
+  margin-bottom:50px;
+  animation:loadEffect .4s ease;
+}
+.dp3 {
+  width:120px;
+  margin-top:-70px;
+  border-radius:50%;
+  border : 2px solid white;
+  position:absolute;
+}
+.about3 {
+	width: 200px;
+	margin: 10px auto;
+	padding: 10px 0;
+	font-family: "Calibri";
+	color:#000000;
+	text-alig: left;
+	font-size: 17px;
+}
+.about3 p b {
+  font-size:16px;
+  font-family: monospace;
+  color:#fff;
+  display:block;
+  text-align:center;
+  margin-top:10px;
+  position:relative;
+}
+
+.about3 p {
+  text-align:center;
+}
+.about3 p span {
+  display:block;
+  margin:5px auto;
+}
+
+
+
+a {
+  text-decoration:none;
+  color: #727272;
+  padding:5px;
+  font-size:16px;
+}
+a:hover {
+  color:#00a5a6;
+  text-decoration:none;
+}
+
+
+th.t{
+  border: 1px solid white;
+  padding-left: 420px;
+  font-size: 35px;
+  font-family: "Arial Rounded MT Bold";
+}
+
+th.d{
+  border: 1px solid white;
+  padding-left:220px;
+  font-size: 35px;
+  font-family: "Arial Rounded MT Bold";
+}
+
+
+</style>
+</head>
+
+
+<table class="a">
+  <tr>
+    <th class="d">Developers</th>
+    <th class="t">Trainers</th>
+  </tr>
+  </table>
+
+<div class="row">
+  <div class="col-md-3 left">
+<div class="container1">
+  <div class="person1">
+    <div class="dp_container1">
+      <div class="box1"></div>
+      <figure><img class="dp1" src="https://media.licdn.com/dms/image/C5103AQEBv1vXXLaLiQ/profile-displayphoto-shrink_800_800/0?e=1567036800&v=beta&t=HniebXhem2cwVE6o4sYgXTk0mw1ZwDHlG86q35xUueM"  align="middle"></figure>
+    </div>
+    <div class="about1">
+      <p>
+        <b style="font-size:30px;color:Black;font-family:'Arial Rounded MT Bold';">Anuj Pareek</b>
+
+        <span>Jaipur, Rajasthan</span>
+        <b>Academic</b>
+
+        <span><a href="https://anandice.ac.in/">Anand International College Of Engineering</a></span>
+		<hr>
+        <b>GIT:</b>
+
+
+        <a href="https://github.com/anuj378">Anuj Pareek</a>
+        <hr>
+        <b>Contact:</b>
+      <a href="mailto:anujpareek378@gmail.com" title="mailto:anujpareek378@gmail.com"> Email</a>||<a 
+      href="https://www.linkedin.com/in/anuj-pareek-59b26a122/">Linkedin</a>
+      </p>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+
+
+ <div class="col-md-3 middle">
+<div class="container2">
+  <div class="person">
+    <div class="dp_container">
+      <div class="box"></div>
+      <figure><img class="dp" src="https://media.licdn.com/dms/image/C5103AQH6dKBgxHjzuQ/profile-displayphoto-shrink_200_200/0?e=1567036800&v=beta&t=22DODg3Tk_PR2kO9it0Q1jJD6M9cPxnSefbo9NeShpI" align="middle"></figure>
+    </div>
+    <div class="about">
+      <p>
+        <b style="font-size:30px;color:Black;font-family:'Arial Rounded MT Bold';">Jiny Jain</b>
+
+        <span>Jaipur, Rajasthan</span>
+        <b>Academic</b>
+        <span><a href="https://anandice.ac.in/">Anand International College Of Engineering</a></span>
+		<hr>
+        <b>GIT:</b>
+
+        <a href="https://github.com/jinyjain">Jiny Jain</a>
+<hr>
+        <b>Contact:</b>
+        <a href="mailto:jinyjain21031999@gmail.com" title="jinyjain21031999@gmail.com">Email</a>||<a href="https://www.linkedin.com/in/jiny-jain-35814818a/">Linkedin</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+ <div class="col-md-3 right">
+<div class="container3">
+  <div class="person3">
+    <div class="dp_container3">
+      <div class="box3"></div>
+      <figure><img class="dp3" src="https://pbs.twimg.com/profile_images/651339381379219456/m3x73pMg.png" align="middle"></figure>
+    </div>
+    <div class="about3">
+      <p>
+        <b style="font-size:20px;color:Black;font-family:'Arial Rounded MT Bold';text-align: left;">Forsk Technologies</b>
+
+        <span>Jaipur, Rajasthan</span>
+        <b>Academic</b>
+        <span><a href="http://www.forsk.in/">Forsk Technologies</a></span>
+		<hr>
+      <b>Location :</b>
+      <a href="https://www.google.com/maps/place/Forsk+Technologies/@26.7888231,75.8245807,17z/data=!3m1!4b1!4m5!3m4!1s0x396dc99ec8cdd58b:0x646f8f540ebc9b2e!8m2!3d26.7888231!4d75.8267694">Startup Oasis, Sitapura, Jaipur</style> </a>
+<hr>
+        <b>Contact:</b>
+        <a href="mailto:forsklabs@gmail.com" title="forsklabs@gmail.com">Email</a>||<a href="https://www.linkedin.com/company/forsklabs/">Linkedin</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+
+{% endblock %}
+
